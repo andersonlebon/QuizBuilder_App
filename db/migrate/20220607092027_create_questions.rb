@@ -3,7 +3,8 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
     create_table :questions do |t|
       t.string :name
       t.text :question_description
-      t.string :author
+      t.references :user, foreign_key: true, index: true
+      t.references :quiz_test, foreign_key: true, index: true
 
       t.timestamps
     end
