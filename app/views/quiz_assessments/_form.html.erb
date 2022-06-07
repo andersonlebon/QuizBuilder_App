@@ -1,10 +1,10 @@
-<%= form_with(model: quiz_test) do |form| %>
-  <% if quiz_test.errors.any? %>
+<%= form_with(model: quiz_assessment) do |form| %>
+  <% if quiz_assessment.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(quiz_test.errors.count, "error") %> prohibited this quiz_test from being saved:</h2>
+      <h2><%= pluralize(quiz_assessment.errors.count, "error") %> prohibited this quiz_assessment from being saved:</h2>
 
       <ul>
-        <% quiz_test.errors.each do |error| %>
+        <% quiz_assessment.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -19,11 +19,6 @@
   <div>
     <%= form.label :question_description, style: "display: block" %>
     <%= form.text_area :question_description %>
-  </div>
-
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
   </div>
 
   <div>

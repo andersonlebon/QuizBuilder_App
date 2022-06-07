@@ -1,0 +1,8 @@
+<%= render @quiz_assessment %>
+
+<div>
+  <%= link_to "Edit this quiz test", edit_quiz_assessment_path(@quiz_assessment) %> |
+  <%= link_to "Back to quiz tests", quiz_assessments_path %>
+
+  <%= button_to "Destroy this quiz test", @quiz_assessment, method: :delete %>
+</div>

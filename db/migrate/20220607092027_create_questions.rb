@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :question_description
       t.references :user, foreign_key: true, index: true
-      t.references :quiz_test, foreign_key: true, index: true
+      t.references :quiz_assessment, foreign_key: true, index: true
 
       t.timestamps
     end
