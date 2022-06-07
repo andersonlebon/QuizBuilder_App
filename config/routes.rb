@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :answers
-  resources :quiz_tests
-  resources :questions
   devise_for :users
-  get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :quiz_tests do
+    resources :questions do
+      resources :answers
+    end
+  end
   # Defines the root path route ("/")
   root "home#index"
 end
