@@ -22,6 +22,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 
 gem 'devise'
+gem 'cancancan'
+
 
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

@@ -65,6 +65,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:question_answer, :correct, :user_id, :quiz_id, :answer_id)
+      params.require(:answer).permit(:question_answer, :correct,id, :answer_id)
     end
 end

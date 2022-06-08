@@ -6,13 +6,9 @@
   <% @questions.each do |question| %>
     <%= render question %>
     <p>
-      <%= link_to "Show this question", question %>
+      <%= link_to "Show this question", quiz_assessment_question_path(question) %>
     </p>
   <% end %>
 </div>
 
-<%
-=begin%>
- <%= link_to "New question", new_question_path %> 
-<%
-=end%>
+<%= link_to "New question", new_quiz_assessment_question_path %>
