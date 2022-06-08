@@ -1,4 +1,5 @@
 class QuizAssessmentsController < ApplicationController
+  
   before_action :set_quiz_assessment, only: %i[ show edit update destroy ]
 
   # GET /quiz_assessments or /quiz_assessments.json
