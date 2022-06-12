@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<section class="form-section d-flex flex-column align-items-center">
+  <h1 class="text fw-bolder">Questions</h1>
 
-<h1>Questions</h1>
-
-<div id="questions">
-  <% @questions.each do |question| %>
-    <%= render question %>
-    <p>
-      <%= link_to "Show this question", quiz_assessment_question_path(question) %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New question", new_quiz_assessment_question_path %>
+  <div id="quiz_assessments">
+     <% @questions.each do |question| %>
+    <div  class="bg bg-light p-4 m-3 border">
+      <%= render question %>
+      <p>
+        <%= link_to "Show this question", quiz_assessment_question_path(question.quiz_assessment_id, question) %>
+      </p>
+    </div>
+    <% end %>
+  <%= link_to "New question", new_quiz_assessment_question_path %>
+  </div>
+</section>

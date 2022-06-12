@@ -4,12 +4,13 @@ class QuizAssessmentsController < ApplicationController
 
   # GET /quiz_assessments or /quiz_assessments.json
   def index
-    binding
     @quiz_assessments = QuizAssessment.all
   end
 
   # GET /quiz_assessments/1 or /quiz_assessments/1.json
   def show
+    @quiz_assessment = QuizAssessment.find(params[:id])
+    @questions = @quiz_assessment.questions
   end
 
   # GET /quiz_assessments/new

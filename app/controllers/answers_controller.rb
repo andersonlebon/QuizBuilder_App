@@ -22,6 +22,12 @@ class AnswersController < ApplicationController
   # POST /answers or /answers.json
   def create
     @answer = Answer.new(answer_params)
+    @answer.user_id = current_user.id
+    @answer.quiz_assessment_id = params[:quiz_assessment_id]
+    @answer.question_id = params[:question_id]
+    # @answer = current_user.quiz_assessments.find(params[:quiz_assessment_id]).questions.find(params[:question_id]).answers.create(answer_params)
+
+    
 
     respond_to do |format|
       if @answer.save
@@ -65,6 +71,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:question_answer, :correct,id, :answer_id)
+      params.require(:answer).permit(:question_answer, :correct)
     end
 end

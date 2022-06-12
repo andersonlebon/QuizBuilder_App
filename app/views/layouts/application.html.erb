@@ -3,6 +3,7 @@
   <head>
     <title>QuizTest</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +12,12 @@
   </head>
 
   <body>
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
+    <main class="d-flex flex-column w-100">
+     <div class="mx-auto ">
+      <p class="notice text-success"><%= notice %></p>
+      <p class="alert text-danger"><%= alert %></p>
+     </div>
 
     <%= yield %>
   </body>

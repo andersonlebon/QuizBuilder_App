@@ -3,11 +3,13 @@ class QuestionsController < ApplicationController
 
   # GET /questions or /questions.json
   def index
-    @questions = Question.all
+    @quiz_assessment = QuizAssessment.find(params[:quiz_assessment_id])
+    @questions = @quiz_assessment.questions
   end
 
   # GET /questions/1 or /questions/1.json
   def show
+    
   end
 
   # GET /questions/new

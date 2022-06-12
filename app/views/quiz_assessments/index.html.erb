@@ -1,18 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Quiz tests</h1>
+<section class="form-section d-flex flex-column align-items-center">
+<h1 class="text fw-bolder">Quiz tests</h1>
 
 <div id="quiz_assessments">
   <% @quiz_assessments.each do |quiz_assessment| %>
+  <div  class="bg bg-light p-4 m-3 border">
     <%= render quiz_assessment %>
     <p>
       <%= link_to "Show this quiz test", quiz_assessment %>
     </p>
+  </div>
   <% end %>
 </div>
-
-<%
-=begin%>
- <%= link_to "New quiz test", new_quiz_assessment_path %> 
-<%
-=end%>
+</section>

@@ -1,10 +1,11 @@
-<h1>Editing question</h1>
-
-<%= render "form", question: @question %>
+<section class="form-section d-flex flex-column align-items-center">
+  <h1 class="text fw-bolder">Editing question</h1>
+  <%= render "form", question: @question %>
 
 <br>
 
 <div>
-  <%= link_to "Show this question", @question %> |
+   <%= link_to "Show this question", quiz_assessment_question_path(@question.quiz_assessment_id, @question) %> |
   <%= link_to "Back to questions", quiz_assessment_questions_path %>
 </div>
+</section>

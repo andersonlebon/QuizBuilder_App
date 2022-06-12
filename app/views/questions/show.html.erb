@@ -1,5 +1,19 @@
-<%= render @question %>
+<section class="form-section d-flex flex-column align-items-center">
+<div  class="bg bg-light p-4 m-3 border"> 
 
+<%= render @question %>
+</div>
+  <div id="quiz_assessments">
+    <% @question.answers.each do |answer| %>
+    <div  class="bg bg-light p-4 m-3 border">
+      <%= render answer %>
+
+      <p>
+        <%= link_to "Show this answer", quiz_assessment_question_answer_path(answer.quiz_assessment_id, answer.question_id, answer) %>
+      </p>
+    </div>
+    <% end %>
+  </div>
 <div>
   <%= link_to "Edit this question", edit_quiz_assessment_question_path(@question) %> |
   <%= link_to "Back to questions", quiz_assessment_questions_path %>
@@ -10,3 +24,4 @@
 <%
 =end%>
 </div>
+</section>

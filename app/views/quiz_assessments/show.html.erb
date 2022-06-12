@@ -1,8 +1,27 @@
-<%= render @quiz_assessment %>
+<section class="form-section d-flex flex-column align-items-center">
+  <div  class="bg bg-light p-4 m-3 border"> 
+    <%= render @quiz_assessment %>
+  </div>
+
+  <div class="form-section d-flex flex-column align-items-center">
+  <h2 class="text fw-bolder">Questions</h2>
+
+  <div id="quiz_assessments">
+     <% @questions.each do |question| %>
+    <div  class="bg bg-light p-4 m-3 border">
+      <%= render question %>
+      <p>
+        <%= link_to "Show this question", quiz_assessment_question_path(question.quiz_assessment_id, question) %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this quiz test", edit_quiz_assessment_path(@quiz_assessment) %> |
   <%= link_to "Back to quiz tests", quiz_assessments_path %>
 
-  <%= button_to "Destroy this quiz test", @quiz_assessment, method: :delete %>
+  <%= button_to "Destroy this quiz test", @quiz_assessment, method: :delete, class: "btn btn-danger" %>
 </div>
+<section>
