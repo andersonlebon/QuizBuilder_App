@@ -30,7 +30,7 @@ bundle install
 ```
 ```sh
  - rails db:setup
- and then run
+
 -  rails db:migrate
 ```
 ### Run
