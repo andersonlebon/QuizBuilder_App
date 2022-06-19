@@ -22,11 +22,14 @@ To get a local copy up and running follow these simple example steps.
 
 ```sh
 git clone git@github.com:andersonlebon/QuizBuilder_App.git
-~ cd QuizBuilder_App
+```
+
+```
+cd QuizBuilder_App
 
 ```
 ```sh
-bundle install
+bundle install 
 ```
 ```sh
  - rails db:setup
